@@ -88,6 +88,44 @@ export interface AppNotification {
   created_at: string
 }
 
+export type AutomationStatus = 'planned' | 'development' | 'active' | 'paused'
+export type BottleneckPriority = 'high' | 'medium' | 'low'
+export type BottleneckStatus = 'evaluating' | 'approved' | 'pipeline' | 'discarded'
+
+export interface Automation {
+  id: string
+  name: string
+  company: string
+  status: AutomationStatus
+  tool: string | null
+  category: string | null
+  description: string | null
+  workflow_steps: string | null
+  icon: string
+  color: string
+  technical_notes: string | null
+  monthly_hours_saved: number
+  hourly_cost: number
+  development_hours: number
+  monthly_license_cost: number
+  go_live_date: string | null
+  created_at: string
+  updated_at: string
+  created_by: string | null
+}
+
+export interface Bottleneck {
+  id: string
+  need: string
+  proposed_tool: string | null
+  priority: BottleneckPriority
+  status: BottleneckStatus
+  estimated_monthly_cost: number
+  notes: string | null
+  created_at: string
+  updated_at: string
+}
+
 export interface WizardFormData {
   full_name: string
   company: string

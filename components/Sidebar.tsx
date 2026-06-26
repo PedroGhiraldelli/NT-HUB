@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 import type { Role } from '@/lib/types'
 import {
   HomeIcon, PlusIcon, ListIcon, KanbanIcon, BookIcon, EditIcon,
-  UsersIcon, LogOutIcon, MenuIcon, XIcon,
+  UsersIcon, LogOutIcon, MenuIcon, XIcon, ZapIcon, AlertTriangleIcon,
 } from './Icons'
 
 interface NavItem {
@@ -26,7 +26,9 @@ const navItems: NavItem[] = [
   { label: 'Pipeline',             href: '/pipeline',       icon: <KanbanIcon />, roles: ['admin', 'analyst'] },
   { label: 'Base de Conhecimento', href: '/knowledge',      icon: <BookIcon />,   roles: ['admin', 'analyst', 'director', 'collaborator'] },
   { label: 'Novo Artigo',          href: '/knowledge/new',  icon: <EditIcon />,   roles: ['admin', 'analyst', 'director', 'collaborator'] },
-  { label: 'Usuários',             href: '/admin/users',    icon: <UsersIcon />,  roles: ['admin'] },
+  { label: 'Usuários',             href: '/admin/users',        icon: <UsersIcon />,          roles: ['admin'] },
+  { label: 'Automações',           href: '/admin/automations',  icon: <ZapIcon />,            roles: ['admin'] },
+  { label: 'Gargalos',             href: '/admin/bottlenecks',  icon: <AlertTriangleIcon />,  roles: ['admin'] },
 ]
 
 interface SidebarProps {

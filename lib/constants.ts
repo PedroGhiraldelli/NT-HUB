@@ -78,6 +78,61 @@ export const ROLE_LABELS: Record<string, string> = {
   collaborator: 'Colaborador',
 }
 
+export const AUTOMATION_STATUS_LABELS: Record<string, string> = {
+  planned: 'Planejada',
+  development: 'Em Desenvolvimento',
+  active: 'Ativa',
+  paused: 'Pausada',
+}
+
+export const AUTOMATION_STATUS_COLORS: Record<string, string> = {
+  planned: '#9CA3AF',
+  development: '#D97706',
+  active: '#16A34A',
+  paused: '#DC2626',
+}
+
+export const AUTOMATION_CATEGORIES: Record<string, string> = {
+  rpa: 'RPA / Automação Web',
+  data_integration: 'Integração de Dados',
+  report: 'Relatórios / Dashboard',
+  email: 'E-mail / Comunicação',
+  document: 'Documentos / PDF',
+  erp: 'ERP / Sistema Interno',
+  api: 'API / Webhook',
+  other: 'Outro',
+}
+
+export const AUTOMATION_TOOLS = [
+  'Power Automate',
+  'n8n',
+  'Python',
+  'Excel VBA',
+  'Power BI',
+  'Make (Integromat)',
+  'Zapier',
+  'Outro',
+]
+
+export const BOTTLENECK_PRIORITY_LABELS: Record<string, string> = {
+  high: 'Alta',
+  medium: 'Média',
+  low: 'Baixa',
+}
+
+export const BOTTLENECK_PRIORITY_COLORS: Record<string, string> = {
+  high: '#DC2626',
+  medium: '#D97706',
+  low: '#16A34A',
+}
+
+export const BOTTLENECK_STATUS_LABELS: Record<string, string> = {
+  evaluating: 'Avaliando',
+  approved: 'Aprovado',
+  pipeline: 'Pipeline',
+  discarded: 'Descartado',
+}
+
 // Frequência → multiplicador mensal
 export const FREQUENCY_MONTHLY: Record<string, number> = {
   'Várias vezes por dia': 100,

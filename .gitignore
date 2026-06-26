@@ -25,3 +25,6 @@ yarn-error.log*
 
 # claude code
 .claude/
+
+# pasta do Edge (não é parte do projeto)
+Application/
