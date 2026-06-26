@@ -213,6 +213,7 @@ export default function AutomationsPage() {
   const inDev = automations.filter(a => a.status === 'development')
   const totalMonthlyROI = active.reduce((sum, a) =>
     sum + (a.monthly_hours_saved * a.hourly_cost - a.monthly_license_cost), 0)
+  const totalAnnualROI = totalMonthlyROI * 12
 
   if (loading) return (
     <div className="flex justify-center py-16">
@@ -261,8 +262,8 @@ export default function AutomationsPage() {
       <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
         <StatCard label="Total" value={automations.length} color="blue" />
         <StatCard label="Ativas" value={active.length} color="green" />
-        <StatCard label="Em Desenvolvimento" value={inDev.length} color="yellow" />
-        <StatCard label="ROI Mensal (Ativas)" value={fmtBRL(totalMonthlyROI)} color="green" />
+        <StatCard label="Economia Mensal" value={fmtBRL(totalMonthlyROI)} color="green" />
+        <StatCard label="Economia Anual" value={fmtBRL(totalAnnualROI)} color="green" />
       </div>
 
       {/* Filters */}
@@ -313,12 +314,20 @@ export default function AutomationsPage() {
                     {a.category && <><span>·</span><span>{AUTOMATION_CATEGORIES[a.category] ?? a.category}</span></>}
                   </div>
                 </div>
-                {a.status === 'active' && (
-                  <div className="text-right shrink-0">
-                    <p className="text-xs text-gray-400">ROI/mês</p>
-                    <p className="text-sm font-bold text-nt-success">
-                      {fmtBRL(a.monthly_hours_saved * a.hourly_cost - a.monthly_license_cost)}
-                    </p>
+                {a.monthly_hours_saved > 0 && (
+                  <div className="text-right shrink-0 space-y-0.5">
+                    <div>
+                      <p className="text-xs text-gray-400">Economia/mês</p>
+                      <p className="text-sm font-bold text-nt-success">
+                        {fmtBRL(a.monthly_hours_saved * a.hourly_cost - a.monthly_license_cost)}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400">Economia/ano</p>
+                      <p className="text-sm font-semibold text-nt-primary">
+                        {fmtBRL((a.monthly_hours_saved * a.hourly_cost - a.monthly_license_cost) * 12)}
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
