@@ -94,6 +94,7 @@ export const AUTOMATION_STATUS_COLORS: Record<string, string> = {
 
 export const AUTOMATION_CATEGORIES: Record<string, string> = {
   rpa: 'RPA / Automação Web',
+  fiscal: 'Financeiro / Fiscal',
   data_integration: 'Integração de Dados',
   report: 'Relatórios / Dashboard',
   email: 'E-mail / Comunicação',
