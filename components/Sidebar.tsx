@@ -10,6 +10,7 @@ import {
   HomeIcon, PlusIcon, ListIcon, KanbanIcon, BookIcon, EditIcon,
   UsersIcon, LogOutIcon, MenuIcon, XIcon, ZapIcon, AlertTriangleIcon,
 } from './Icons'
+import { ThemeToggle } from './ThemeToggle'
 
 interface NavItem {
   label: string
@@ -95,6 +96,7 @@ export function Sidebar({ role, userName, company }: SidebarProps) {
           <p className="text-sm font-medium text-white truncate">{userName}</p>
           <p className="text-xs text-blue-300 truncate">{company}</p>
         </div>
+        <ThemeToggle />
         <button
           onClick={handleLogout}
           disabled={loggingOut}

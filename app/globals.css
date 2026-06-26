@@ -78,3 +78,58 @@ body {
 .markdown-content em { font-style: italic; }
 .markdown-content code { background: #f3f4f6; padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.9em; font-family: monospace; }
 .markdown-content hr { border: none; border-top: 1px solid #e5e7eb; margin: 1rem 0; }
+
+/* ─── Dark mode ─────────────────────────────────────── */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0F172A;
+  color: #E2E8F0;
+}
+
+/* Backgrounds */
+html.dark .bg-nt-bg   { background-color: #0F172A; }
+html.dark .bg-white   { background-color: #1E293B; }
+html.dark .bg-gray-50 { background-color: #1E293B; }
+
+html.dark .bg-blue-50   { background-color: #1e3a5f; }
+html.dark .bg-green-50  { background-color: #14532d; }
+html.dark .bg-yellow-50 { background-color: #422006; }
+html.dark .bg-red-50    { background-color: #450a0a; }
+html.dark .bg-gray-100  { background-color: #334155; }
+
+/* Texto */
+html.dark .text-gray-900 { color: #F1F5F9; }
+html.dark .text-gray-800 { color: #E2E8F0; }
+html.dark .text-gray-700 { color: #CBD5E1; }
+html.dark .text-gray-600 { color: #94A3B8; }
+html.dark .text-gray-500 { color: #64748B; }
+html.dark .text-gray-400 { color: #475569; }
+html.dark .text-gray-300 { color: #334155; }
+
+/* Bordas */
+html.dark .border-gray-100 { border-color: #334155; }
+html.dark .border-gray-200 { border-color: #334155; }
+html.dark .border-gray-300 { border-color: #475569; }
+
+/* Inputs e selects */
+html.dark input:not([type='checkbox']):not([type='radio']):not([type='range']),
+html.dark select,
+html.dark textarea {
+  background-color: #1E293B;
+  color: #E2E8F0;
+  border-color: #475569;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder { color: #475569; }
+
+/* Scrollbar escuro */
+html.dark ::-webkit-scrollbar-track  { background: #1E293B; }
+html.dark ::-webkit-scrollbar-thumb  { background: #475569; }
+
+/* Markdown */
+html.dark .markdown-content code { background: #334155; color: #E2E8F0; }
+html.dark .markdown-content hr   { border-color: #334155; }
